@@ -1,0 +1,186 @@
+// =========== Start Resume Section
+.resume {
+    @extend %global_section;
+    //===== Group Style
+    .left-side, .right-side {
+        color: $color-gray;
+    }
+    //======= Panel bar Buttons
+    .panel-dad {
+        @extend %panel-tabs;
+    }
+    //========== Top Head Of The Boxes
+     .head {
+        margin-bottom: 30px;
+        .date, .type {
+            color: $main-color;
+        }
+        .type {
+            text-transform: capitalize;
+        }
+        .head-title {
+            margin-top: 15px;
+            span {
+                // Font Proparty
+                font: {
+                    size: 35px;
+                    weight: bold;
+                }
+                text-transform: capitalize;
+                color: $color-lightn;
+            }
+        }
+    }
+    //======== Education Content Style
+    .education-content, .experince-content, .interview-content {
+        //======= Grouping Style
+        .left-boxes, .right-boxes {
+            // Container Contain Just Boxes Without Upper Head
+           .boxes {
+            padding-left: 30px;
+            border-left: 5px solid #17191c;
+                //========== Boxes Content
+                .box {
+                    cursor: pointer;
+                    background: $background-color-1;
+                    box-shadow: $shadow-1;
+                    margin-bottom: 30px;
+                    position: relative;
+                    z-index: 1;
+                    @include transition(all, .3s);
+                    // Set Background Effect On Hover
+                    &::before {
+                        @include seoudo;
+                        @include transition(opacity, .3s);
+                        background: $gradient;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+                    //========= Inner Box Content Parent
+                    .inner {
+                        padding: 25px;
+                        position: relative;
+                         // Dash Between Box And Bullets
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                right: 100%;
+                                top: 10%;
+                                width: 35px;
+                                height: 5px;
+                                background: #17191c;
+                            }
+                            // The Bullets
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 8%;
+                                right: 105%;
+                                width: 20px;
+                                height: 20px;
+                                border: 5px solid #17191c;
+                                border-radius: 50%;
+                                background: #222529;
+                                @include transition(background-color, .3s);
+                            }  
+                        // Box Head
+                        h3 {
+                            color: $color-lightn;
+                            font-size: 24px;
+                        }
+                        // Box Collage Degree
+                        .collage {
+                            color: #7c838e;
+                        }
+                        // Box Rate Badge
+                        .rate-badge {
+                            color: $main-color;
+                            padding: 5px;
+                            box-shadow: $shadow-1;
+                            width: fit-content;
+                            margin: 20px 0;
+                            @include transition(all, .3s);
+                        }
+                        // Box Paragraph
+                        p {
+                            color: $color-lightn;
+                            @include transition(color, .3s);
+                            @extend %top_line;
+                            padding-top: 20px;
+                            line-height: 2;
+                        }
+                    }
+                    //========= Box On Hover 
+                    &:hover {
+                        // Change Backround effect
+                        &::before {
+                            opacity: 1;
+                        }
+                        // Change Bullets Background
+                        .inner {
+                            &::after {
+                                background-color: $main-color;
+                            }
+                        }
+                        // Change Head Color
+                        h3 {
+                            color: $color-gray;
+                        }
+                        // Rate Badage
+                        .rate-badge {
+                            box-shadow: none;
+                            background: $gradient;
+                        }
+                    }
+                }
+           }
+        }
+    }
+    //======== Proffesinal Skills Style
+    .proffesinal-content {
+       .progress-grouping {
+           .group-bar {
+               margin-bottom: 35px;
+            // Upper Title Of The Bar
+               .title {
+                   margin-bottom: 10px;
+                   .name {
+                       text-transform: uppercase;
+                       letter-spacing: 2px;
+                       font-size: 12px;
+                       opacity: .9;
+                       font-weight: bold;
+                       color: #c3cedd;
+                   }
+               }
+            // The Bar
+                .progress {
+                    height: 8px;
+                    background: #212428;
+                    box-shadow: inset 8px 8px 16px #00000075, inset -8px -8px 16px #383e4575;
+                    border-radius: 7px;
+                    padding-left: 3px;
+                    overflow: initial;
+                    .progress-bar {
+                        overflow: initial;
+                        border-radius: 7px;
+                        height: 100%;
+                        background: linear-gradient(145deg, #f02981 0%, #c81901 100%);
+                        position: relative;
+                        &::after {
+                            content: " "attr(aria-valuenow)" %";
+                            position: absolute;
+                            top: -25px;
+                            right: 0;
+                            font-weight: bold;
+                            color: #c3cedd;
+                            font-size: 13px;
+                            opacity: .9;
+                        }
+                    }
+                }   
+           }
+       }
+    }
+
+}

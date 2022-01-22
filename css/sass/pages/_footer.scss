@@ -1,0 +1,16 @@
+//==== start Footer
+footer {
+    @extend %global_section;
+    .logo {
+       display: flex;
+       justify-content: center;
+       margin-bottom: 50px;
+    }
+    .copyright {
+        color: $color-gray;
+        line-height: 2;
+        a {
+            color: $main-color;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+
+//============ Start POrtfolio Section
+.portfolio {
+    @media screen and (max-width: 768px) {
+        .portfolio-pop {
+            .modal-dialog {
+                .modal-content {
+                    .modal-body {
+                        .portfolio-popup-thumbnail {
+                            .image {
+                                margin-bottom: 25px;
+                            }
+                        }          
+                    }
+                }
+            }
+        }    
+    }
+}
+
+//============ Start Resume Section
+.resume {
+    .education-content  {
+        .left-boxes, .right-boxes {
+            .boxes {
+                .box {
+                    // Set Postition Of Dash & Bullets Between Box And Left Column
+                    .inner {
+                        // Inner Box Seoudo Element On Small Screen
+                        @media (max-width: 768px) {
+                            // Dash
+                            &::before {
+                             top: 9.5%;   
+                            }
+                            // Bullets
+                            &::after {
+                                right: 106.8%;
+                            }
+                        }
+                        // Inner Box Seoudo Element On Medium Screen
+                        @media screen and (min-width: 991px) and (max-width: 1024px)  {
+                            //  Bullets
+                             &::after {
+                                right: 104.8%;
+                            }
+                        }
+                        // Inner Box Seoudo Element On Extra large Screen
+                        @media screen and (min-width: 1025px)  {
+                            //  Bullets
+                             &::after {
+                                right: 104.6%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//=========== Start Clients Section
+.clients {
+    .right-side-images {
+        // Resize Box On Small Screen
+        .card-content {
+            @media screen and (max-width: 768px) {
+                width: 95%;
+                margin: {
+                    right: auto;
+                    left: auto;
+                }
+            }
+        }
+    }    
+}
+//============ Start Testimoials
+.testimonials {
+    .carousel-inner {
+        .carousel-item {
+            @media (max-width: 768px) {
+                .avatar {
+                    height: auto !important;
+                    margin-bottom: 23px;
+                }
+            }
+            //====== Left Side Of Carsouel
+        }
+    }        
+}
+
+//============ Start Pricing
+.pricing {
+    @media (max-width: 768px) {
+        .pricing-panel {
+             ul {
+               li:nth-child(2) {
+                    &::before {
+                        top: 0;
+                        right: 0;
+                    }
+                    &:after {
+                        display: none;
+                    }
+               }
+           }
+       }
+    }
+}
+
+//============ Start Blog
+.blog {
+    .modal {
+        .modal-dialog {
+            .modal-content {
+                .modal-body {
+                    @media (max-width: 768px) {
+                    overflow-x: hidden;
+                    .popup-blog-content {
+                        padding: 50px 20px;
+                        .inner {
+                            .form {
+                                    // Send Button    
+                                    .send-btn {
+                                        width: 100%;
+                                    }
+                                    // Text Area Custmize
+                                    &:nth-of-type(2) form  {
+                                        margin-top: -36px;
+                                        textarea {
+                                            height: 300px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        }   }         
+    }
+}

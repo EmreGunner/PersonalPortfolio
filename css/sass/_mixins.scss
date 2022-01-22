@@ -1,0 +1,26 @@
+// Css3 Prefix
+@mixin prefix($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+}
+
+
+// Transtion Mixin
+@mixin transition($prop: all, $durtion: $transition, $timef: ease-in) {
+    @include prefix(transition, $prop $durtion $timef);
+}
+
+// Seoudo Element 
+@mixin seoudo($top: 0, $left: 0, $width: 100%, $height: 100%, $index: 1, $color: rgba(0, 0, 0, .2)) {
+    content: "";
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+    z-index: $index;
+    background-color: $color;
+}

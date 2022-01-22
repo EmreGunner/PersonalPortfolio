@@ -1,0 +1,176 @@
+//======= Start Portfolio
+.portfolio {
+    @extend %global_section;
+    //======= Main Parent That Contain All Boxes
+    .projects-boxes {
+        //======= The Box
+        .box {
+            cursor: pointer;
+            min-height: 500px;
+            box-shadow: $shadow-1;
+            background-image: $gradient;
+            border-radius: 22px;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+            // Pseudo Element Make Backround Effect
+            &::after {
+                @include seoudo;
+                @include transition(opacity, .3s);
+                background-color: $background-color-1;
+                border-radius: inherit;
+                opacity: 0;
+                z-index: -1;
+            }
+            // Parnet Of Content
+            .inner {
+                padding: 40px;
+                // Project Image
+                .image {
+                    overflow: hidden;
+                    border-radius: 17px;
+                    img {
+                        max-width: 100%;
+                        @include transition(transform, .3s);
+                    }
+                }
+                // Box Badges Type
+                .project-type {
+                    margin: 25px 0;
+                    span:first-child {
+                        color: $main-color;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    span:last-child {
+                        color: $color-gray;
+                    }
+                    i {
+                        display: inline-block;
+                        margin-right: 7px;
+                    }
+                }
+                // Box Head
+                .box-head {
+                    span {
+                        @include transition(color, .3s);
+                        font-size: 20px;
+                        color: $par-color;
+                        i {
+                            @include transition(opacity, .3s);
+                            color: $main-color;
+                            opacity: 0;
+                        }
+                    }
+                    // Hover Effect
+                    &:hover {
+                        span {
+                            color: $main-color;
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            // Main Box On Hover
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+                .image {
+                    img {
+                        @include prefix(transform, scale(1.1, 1.1));
+                    }
+                }
+            }
+        }
+    }
+    //======= The POrtofolio POpup
+    .portfolio-pop {
+            top: -20px !important;
+            z-index: 100000000;
+            .modal-dialog {
+                height: 103vh;
+                min-width: 99% !important;
+                position: relative;
+                // Close Icon
+                .btn-close {
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    box-shadow: $shadow-1;
+                    background: $background-color-1;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: $main-color;
+                }
+                // Content
+                .modal-content {
+                height: 100%;
+                background: $background-color-1;
+                // Modal Header
+                .modal-header {
+                    border: none;
+                }
+                // Modal Body
+                .modal-body {
+                    background: $background-color-1;
+                    box-shadow: $shadow-1;
+                    align-items: center;
+                    // Image
+                    .portfolio-popup-thumbnail {
+                        .image {
+                            overflow: hidden;
+                            img {
+                                border-radius: 15px;
+                            }
+                        }
+                    }
+                    // Text Info
+                    .text-info {
+                        text-transform: capitalize;
+                        // Head Of Text
+                        h3 {
+                            width: 70%;
+                            font-size: 35px;
+                            color: $color-lightn;
+                            margin-bottom: 30px;
+                            span {
+                                color: $color-body;
+                                display: block;
+                                font-size: 18px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        // Paragraph Text
+                        p {
+                            color: $color-body;
+                            line-height: 2;
+                            font-size: 19px;
+                            margin-bottom: 30px;
+                        }
+                        // Buttons
+                        .button-group {
+                            a {
+                                display: inline-block;
+                                margin: 20px;
+                                background: $background-color-1;
+                                box-shadow: $shadow-1;
+                                color: $main-color;
+                                border-radius: 10px;
+                                padding: 15px 25px;
+                                @include transition(all, .3s);
+                                &:hover {
+                                    background: $gradient;
+                                    @include prefix(transform, translateY(-10px));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

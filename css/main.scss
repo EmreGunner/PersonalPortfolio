@@ -1,0 +1,47 @@
+// Import Varibales
+@import 'sass/varibales';
+
+// Import Mixins
+@import 'sass/mixins';
+
+// Helpers
+@import 'sass/helpers';
+
+// Global Style Rules
+@import 'sass/pages/global';
+
+// Navbar Component
+@import 'sass/pages/navbar';
+
+// Header Section Component
+@import 'sass/pages/header';
+
+// Features Section Component
+@import 'sass/pages/features';
+
+// Portfolio Section Component
+@import 'sass/pages/portfolio';
+
+// Resume Section Component
+@import 'sass/pages/resume';
+
+// Testimonials Section Component
+@import 'sass/pages/testimonials';
+
+// Clients Section Component
+@import 'sass/pages/clients';
+
+// Pricing Section Component
+@import 'sass/pages/pricing';
+
+// Blog Section Component
+@import 'sass/pages/blog';
+
+// Contact Section Component
+@import 'sass/pages/contact';
+
+// Footer Component
+@import 'sass/pages/footer';
+
+// Responsive Component
+@import 'sass/responsive';

@@ -1,0 +1,70 @@
+//===== Start Clients
+.clients {
+    @extend %global_section;
+    // Left Side Buttons
+    .left-side-buttons {
+        @extend %panel-tabs;
+        ul {
+            li {
+                a {
+                    font-weight: normal;
+                    padding: 18px 0;
+                }
+            }
+        }
+    }
+
+    // Right Side Images
+    .right-side-images {
+        // The Box Global Style
+        .card-content {
+            background: $background-color-1;
+            box-shadow: $shadow-1;
+            border-radius: 7px;
+            margin-bottom: 30px;
+            height: 214px;
+            @include transition;
+            // Box On Hover Effects
+            &:hover {
+                background: $background-color-2;
+                .name {
+                    span {
+                        color: $main-color;
+                    }
+                }
+            }
+            // Client Image
+            .image {
+                height: 80%;
+                padding: 18px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                &:hover {
+                    img {
+                        transform: scale(1.1, 1.1);
+                    }
+                }
+                img {
+                    @include transition(transform, .3s);
+                    max-width: 70%;
+                }
+            }
+            // Client Name
+            .name {
+                @extend %top_line;
+                text-align: center;
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    @include transition;
+                    display: inline-block;
+                    color: #7c838e;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}

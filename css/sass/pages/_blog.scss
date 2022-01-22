@@ -1,0 +1,192 @@
+//====== Start Blog
+.blog {
+    @extend %global_section;
+    //===== Section Head
+    .section-head {
+        span:first-child {
+            letter-spacing: 2px;
+        }
+    } 
+    //===== Blog Content
+    .blog-content {
+        //===== Blox Box
+        .blog-text {
+            background: $background-color-1;
+            box-shadow: $shadow-1;
+            margin-bottom: 35px;
+            border-radius: 15px;
+            cursor: pointer;
+            @include transition(all, .3s);
+            // Box On Hover
+            &:hover {
+                background: $gradient;
+                .image {
+                    img {
+                        transform: scale(1.1, 1.1);
+                    }
+                }
+            }
+            //======== Inner Content
+            .inner {
+                padding: 30px 35px;
+                // Blog Image
+                .image {
+                    border-radius: 20px;
+                    overflow: hidden;
+                    img {
+                        @include transition(transform, .3s);
+                        max-width: 100%;
+                    }
+                }
+                //====== Blog Date And Read Time
+                .blog-type-date {
+                    padding: 20px 0;
+                    .type {
+                        text-transform: uppercase;
+                        color: $main-color;
+                        letter-spacing: 2px;
+                    }
+                    .read-time {
+                        color: $color-lightn;
+                        i {
+                            display: inline-block;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                //======== Head
+                .head {
+                    // Head Title
+                    span {
+                        text-transform: capitalize;
+                        font-size: 24px;
+                        color: $color-lightn;
+                        @include transition(color, .3s);
+                        // Head Hover Effect
+                        &:hover {
+                            color: $main-color;
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                        // Head Arrow Icon
+                        i {
+                            @include transition(opacity, .3s);
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //====== PopUp Blog Modal
+    .modal {
+        z-index: 10000000;
+        .modal-dialog {
+            max-width: 96% !important;
+            .modal-content {
+                border: none;
+                .modal-body {
+                    padding: 0;
+                    background: $background-color-1;
+                    .popup-blog-content {
+                        padding: 50px;
+                        background: $background-color-1;
+                        box-shadow: $shadow-1;
+                        .inner {
+                            position: relative;
+                            // Close Icon
+                            .close-icon {
+                                position: absolute;
+                                top: -70px;
+                                right: -15px;
+                                span {
+                                    cursor: pointer;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    box-shadow: $shadow-1;
+                                    background: $background-color-1;
+                                    font-size: 30px;
+                                    font-weight: bold;
+                                    color: $main-color;
+                                }
+                            }
+                            //======== Article Image
+                            .image {
+                                overflow: hidden;
+                                border-radius: 15px;
+                                margin-top: 25px;
+                                img {
+                                   width: 100%;
+                                   border-radius: 15px;
+                                }
+                            }
+                            //======= Article Text
+                            .text {
+                                //====== Date Of Article
+                                .date {
+                                    margin: 30px 0;
+                                    span {
+                                        color: $color-lightn
+                                    }
+                                }
+                                //======= Articles
+                                article {
+                                    text-transform: capitalize;
+                                    margin-bottom: 50px;
+                                    // Article Head
+                                    h3 {
+                                        color: $color-gray;
+                                        margin-bottom: 15px;
+                                    }
+                                    // Article Text
+                                    p {
+                                        line-height: 2;
+                                        color: $color-body;
+                                    }
+                                }
+                            }
+                             //===== Form
+                            .form {
+                                background: transparent;
+                                box-shadow: none;
+                                // Head Of Form
+                                h3 {
+                                    color: $color-lightn;
+                                    text-transform: capitalize;
+                                    margin-bottom: 25px;
+                                }
+                                // Form Padding
+                                form {
+                                    padding-left: 0;
+                                }
+                                // Texta Area Custmize
+                                &:nth-of-type(2) form {
+                                    height: 100%;
+                                    textarea {
+                                        width: 100%;
+                                        height: 75%;
+                                        margin-top: 11%;
+                                        padding-top: 10px;
+                                        margin: {
+                                            bottom: 0;
+                                        }
+                                    }
+                                }
+                                // Send Button Custmize
+                                .send-btn {
+                                    box-shadow: $shadow-1;
+                                    width: 25%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

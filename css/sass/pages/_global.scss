@@ -1,0 +1,193 @@
+/* Start Global Rules */
+body {
+    font-family: $font-one;
+    background: $background-color-1;
+}
+
+p {
+    line-height: 1.8;
+}
+
+a {
+    @include transition;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+//===== Main Head Of The Section
+.section-head {
+    margin: 10px 0 50px;
+    span:first-child {
+        display: inline-block;
+        color: $main-color;
+        margin-bottom: 20px;
+    }
+    span:last-child {
+        // color: $color-body;
+        color: #c4cfde;
+    }
+}
+
+ //===== Social Icons On Header
+ .social-icons, .badges {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-top: 130px;
+    padding-top: 25px;
+    // Head Of Social Icons
+    .social-head {
+        margin-bottom: 15px;
+        color: $color-lightn;
+        letter-spacing: 2px;
+        font: {
+            weight: 500;
+            family:  $font-two;
+            size: $font-size-3;
+        }
+    }
+    // Direct UnOrder List Of Icons Inside Mobile Navbar
+        > ul {
+            margin: 0;
+            // List Items Icons
+            li {
+                display: inline-block;
+                padding: 15px 20px;
+                margin-right: 15px;
+                cursor: pointer;
+                @include prefix(border-radius, 7px);
+                @include transition(all, .3s);
+                box-shadow: $shadow-1;
+                background-image: $background-color-1;
+                // List Items On Hover
+                &:hover {
+                    @include prefix(transform, translateY(-3px));
+                    background: $gradient;
+                    a {
+                        color: $color-gray;
+                    }
+                }
+                // Inside   
+                a {
+                        color: $color-body;
+                        i {
+                            font-size: 22px;
+                        }
+                }
+            }
+        }
+}
+
+//===== Global Form Style
+.form {
+    background: $background-color-1;
+    box-shadow: $shadow-1;
+    border-radius: 15px;
+    form {
+        padding: 20px;
+        //===== All Labels
+        label {
+            text-transform: capitalize;
+            color: #a0a8b3;
+            font-family: $font-two;
+            margin-bottom: 10px;
+        }
+        //===== All Inputs
+        input {
+            display: block;
+            margin-bottom: 20px;
+            background: #191b1e;
+            box-shadow: $inner-shadow;
+            width: 100%;
+            border: 2px solid transparent;
+            outline: none;
+            padding: 15px 0;
+            border-radius: 7px;
+            text-indent: 10px;
+        }
+        //======== Textarea
+        textarea {
+            text-indent: 10px;
+            width: 100%;
+            margin-bottom: 25px;
+            background: #191b1e;
+            border-radius: 7px;
+            resize: none;
+            outline: none;
+            border: 2px solid transparent;
+        }
+        //======== Focus Effect
+        input:focus, textarea:focus {
+            border-color: $main-color;
+        }         
+    }
+    
+    //======= Conatct Send Button
+    a.send-btn {
+        color: $main-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 15px 0;
+        border-radius: 15px;
+        outline: none;
+        text-align: center;
+        font-size: 19px;
+        background: $background-color-1;
+        text-transform: capitalize;
+        @include transition(transform, .3s);
+        i {
+            display: inline-block;
+            margin: 5px 0 0 7px;
+        }
+        &:hover {
+            background: $gradient;
+            @include prefix(transform, translateY(-5px));
+        }
+    }
+    
+    //==== Make Placeholder Capitalize Case
+    ::placeholder {
+        text-transform: capitalize;
+        color: $color-gray;
+    }
+}
+
+//===== Button To Top
+.to-top-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    z-index: 100000;
+    @include transition(opacity, .3s);
+    span {
+        background: #212428;
+        box-shadow: $shadow-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        i {
+            font-size: 20px;
+            color: $color-gray;
+        }
+    }
+}
+
+
+ //======= Hide Boxes Contain Content Without First Box
+.resume, .pricing, .clients {
+    .content {
+        display: none;
+    }
+    .content.active {
+        display: block;
+    }
+}

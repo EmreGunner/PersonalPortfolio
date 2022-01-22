@@ -1,0 +1,55 @@
+// Main Google Fonts 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+$gradient: linear-gradient(to right bottom, #212428, #16181c);
+$main-color: #ff014f;
+$color-subtitle: #f9004d;
+$par-color: #c4cfde;
+$color-gray: #f6f6f6;
+$color-tertiary: #0d1013;
+$color-body: #878e99;
+$color-lightn: #c4cfde;
+$black-ground: rgba(0, 0, 0, .9); 
+$transition: 0.4s;
+$main-padding: 50px 0;
+
+  $font-one: 'Poppins', sans-serif;
+  $font-two: 'Montserrat', sans-serif;
+  $color-secondary: #f4f5f6;
+  $background-color-1: linear-gradient(145deg, #1e2024, #23272b);
+  $background-color-2: #212428;
+  $shadow-1: 10px 10px 19px #1c1e22, 
+        -10px -10px 19px #262a2e;
+  $shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225;
+  $inner-shadow: 1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset, -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset;
+  $shadow-white-3: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+  $gradient-box-w: linear-gradient(145deg, #e2e8ec, #ffffff);
+  $gradient-red-hover: linear-gradient(145deg, #ff014f, #d11414);
+  $white: #ffffff;
+  $heading-wv: #1e2125;
+  $color-body-white: #3c3e41;
+  $color-midgray: #878787;
+  $color-light: #E4E6EA;
+  $color-lighter: #CED0D4;
+  $color-lightest: #F0F2F5;
+  $color-border: #E6E6E6;
+  $color-white: #ffffff;
+  $color-white-75: rgba(255, 255, 255, 0.75);
+  $color-success: #3EB75E;
+  $color-danger: #FF0003;
+  $color-warning: #FF8F3C;
+  $color-info: #1BA2DB;
+  $color-facebook: #3B5997;
+  $color-twitter: #1BA1F2;
+  $color-youtube: #ED4141;
+  $color-linkedin: #0077B5;
+  $color-pinterest: #E60022;
+  $color-instagram: #C231A1;
+  $color-vimeo: #00ADEF;
+  $color-twitch: #6441A3;
+  $color-discord: #7289da;
+
+  $font-size-1: 18px;
+  $font-size-2: 22px;
+  $font-size-3: 14px;

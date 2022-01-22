@@ -1,0 +1,84 @@
+//====== Start Contact
+.contact {
+    @extend %global_section;
+    .contact-content {
+        //=========== Left Side Info & Conetnt
+        .left-info {
+            background: $background-color-1;
+            box-shadow: $shadow-1;
+            padding: 25px;
+            border-radius: 15px;
+            text-transform: capitalize;
+            //===== Box Hover Effect
+            &:hover {
+                .image {
+                    img {
+                        @include prefix(transform, scale(1.1, 1.1));
+                    }
+                }
+            }
+            //====== Image Frame
+            .image {
+                border-radius: 20px;
+                overflow: hidden;
+                cursor: pointer;
+                margin-bottom: 25px;
+                // Image
+                img {
+                    max-width: 100%;
+                    @include transition(transform, .3s);
+                }
+            }
+            //====== Text Info
+            .text {
+                h4 {
+                    color: $color-light;
+                }
+                span, p {
+                    color: $color-body;
+                }
+                //====== Paragraph Text
+                p {
+                    margin: 25px 0;
+                }
+                //===== Phone Number & Email Info
+                ul {
+                    li {
+                        color: $color-body;
+                        display: block;
+                        margin-bottom: 7px;
+                        a {
+                            color: $color-lightn;
+                            position: relative;
+                            @include transition(color, .2s);
+                            // Line Under Info
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: -3px;
+                                width: 0;
+                                height: 2px;
+                                background: $main-color;
+                                @include transition(width, .3s);
+                            }
+                            // Hover Effect
+                            &:hover {
+                                color: $main-color;
+                                &::after {
+                                    width: 100%;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+            //===== Social Icons
+            .social-icons {
+                border: none;
+                padding: 0;
+                margin-top: 50px;
+            }
+        }        
+    }
+}

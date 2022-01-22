@@ -1,0 +1,130 @@
+// Start Navbar On All Screens
+header {
+   
+//======== Mobile Side Navbar Until Extra Large Screen ====== //
+    // Set Toggle Side Navbar Button 
+        .toggle-side-nav {
+            &:focus {
+                outline: none;
+                border: none;
+                box-shadow: none;
+            }
+            i {
+                color: $main-color;
+            }
+        }
+    // Set Side Navbar Scrool Bar
+        .offcanvas-body {
+            overflow: initial;
+        }
+    // Show Scroll Bar On Mobile Side Navbar  
+        .offcanvas.show {
+            overflow-y: auto;
+        }
+     // Set Navbar Background On All Screen
+        nav, .offcanvas {
+            background-image: $gradient;    
+            p {
+                opacity: .8;
+                color: $color-lightn;
+                margin: 25px 0 30px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, .1);
+            }
+        }
+     // Set Close Side Menu Button Style
+        .close-side-menu {
+            background-color: transparent;
+            border: none;
+            margin-top: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $background-color-1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 26px;
+                color: $main-color;
+            }
+        }
+    // Main Mobile Side Navbar
+        .mobile-nav {
+            // Toggled Silde Nav Links
+            ul.nav-pills  {
+                    li {
+                        a {
+                            color: $color-gray;
+                            @include transition(opacity);
+                        &:hover {
+                            color: $color-gray;
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
+        }
+
+//======== Main Navbar After Extra Large Screen ====== //
+  .navbar-expand-sm {
+      padding: 0;
+        // Links
+        .navbar-nav {
+            &:hover {
+                opacity: .8;
+            }
+            .nav-item {
+                margin: 0 5px;
+                // All Links
+                .nav-link {
+                    color: $color-body;
+                    @include transition(all, .3s);
+                    // Links On Hover
+                    &:hover {
+                        color: $color-gray;
+                        opacity: 1;
+                    }
+                }
+                // Active Link
+                .nav-link.active {
+                    color: $color-gray;
+                    opacity: 1;
+                }
+                // Buy Now Button
+                &.button {
+                    margin-left: 15px;
+                    a {
+                        background-color: $background-color-2;
+                        color: $color-subtitle;
+                        border-color: transparent;
+                        font-weight: bold;
+                        opacity: .7;
+                        // Buy Now Button On Hover
+                        &:hover {
+                            @include prefix(transform, translateY(-5px));
+                            opacity: 1;
+                            color: $color-subtitle;
+                        }
+                        // Buy Now Button On focus
+                        &:focus {
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+//===== Upper Navbar On scroll
+    .scrolling-navbar {
+        @include transition(all, .5s, ease-out);
+    }
+    .scrolling-nav {
+        box-shadow: $shadow-1;
+        background-color: #212428de;
+        backdrop-filter: blur(15px);
+    }
+
+}

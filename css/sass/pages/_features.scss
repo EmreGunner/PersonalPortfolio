@@ -1,0 +1,64 @@
+// Start Features
+.features {
+    @extend %global_section;
+    // Section Head
+    .head {
+        span {
+            color: $main-color;
+            letter-spacing: 2px;
+        }
+        div {
+            font-weight: bold;
+            color: $par-color;
+            margin: 10px 0 40px;
+        }
+    }
+    .boxes {
+        .box {
+            min-height: 410px;
+            cursor: pointer;
+            color: $color-body;
+            margin-bottom: 40px;
+            border-radius: 7px;
+            box-shadow: $shadow-1;
+            @include transition(all, .3s);
+            .inner {
+                padding: 40px;
+                @include transition(all, .3s);
+                .box-icon {
+                    color: $main-color;
+                }
+                .box-head {
+                    text-transform: capitalize;
+                    margin: 20px 0;
+                    color: $par-color;
+                }
+                p {
+                    margin: 15px 0;
+                    color: $par-color;
+                    line-height: 2;
+                    width: 80%;
+                }
+                .box-send-btn {
+                    color: $main-color;
+                    font-size: 28px;
+                    opacity: 0;
+                    @include transition(opacity, .2s);
+                }
+            }
+            // Box On Hover 
+            &:hover {
+                background: $gradient;
+                .inner {
+                    @include prefix(transform, translateY(-10px));
+                    p, .box-head {
+                        color: $color-gray;
+                    }
+                }
+                .box-send-btn {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

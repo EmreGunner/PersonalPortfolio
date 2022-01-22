@@ -1,0 +1,180 @@
+//======== Start Testimonials
+    .testimonials-sec {
+        @extend %global_section;
+        .testimonials {
+            // padding-bottom: 40px;
+
+            //======= Bullets Indicators
+            .carousel-indicators {
+                // bottom: -70px;
+                button, .active {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;  
+                    border: none;
+                    opacity: 1; 
+                    box-shadow: $inner-shadow;
+                    background: $background-color-1;
+                    margin-right: 15px;
+                }      
+                .active {
+                    background: $main-color;
+                }
+            }
+
+            //======= Carousel Inner
+            .carousel-inner {
+                .carousel-item {
+                    padding-bottom: 50px;
+
+                    //====== Left Side Of Carsouel
+                    .avatar {
+                        background: $background-color-1;
+                        box-shadow: $shadow-1;
+                        border-radius: 15px;
+                        padding: 25px;
+                        height: 100%;
+                        position: relative;
+                        z-index: 1;
+                        // Innner Conetnt ON Left Side Carsouel
+                        .inner {
+                            // Image Body
+                            .image {
+                                margin-bottom: 20px;
+                                border-radius: 10px;
+                                overflow: hidden;
+                                cursor: pointer;
+                                // Img
+                                img {
+                                    @include transition(transform, .3s);
+                                    max-width: 100%;
+                                }
+                                // Image On Hover
+                                &:hover {
+                                    img {
+                                        @include prefix(transform, scale(1.1, 1.1))
+                                    }
+                                }
+                            }
+                           .avatar-text {
+                                // Avatar Text Postion
+                                .position {
+                                    color: $main-color;
+                                    font-size: 14px;
+                                    letter-spacing: 2px;
+                                }
+                                .name {
+                                    font: {
+                                        size: 20px;
+                                        weight: bold;
+                                    }
+                                    color: #c4cfde;
+                                    margin: 15px 0;
+                                }
+                                // Avatar Text Job Title
+                                .job-title {
+                                    color: #c4cfde;
+                                    opacity: .6;
+                                    font-size: 14px;
+                                    text-transform: capitalize;
+                                }
+                           }
+                        }
+                    }   
+
+                    //======= Right Side Of Carsouel
+                    .testimonials-right-content {
+                        position: relative;
+                        // Quote Image
+                        .quote-image {
+                            width: 150px;
+                            margin-top: -27px;
+                            opacity: .6;
+                            position: relative;
+                            // Set The Dash Between The Left & Right Carsouel
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                top: 150%;
+                                left: -20%;
+                                height: 5px;
+                                width: 30px;
+                                background: $black-ground;
+                                z-index: -1;
+                            }
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+                        // Description Content Text
+                        .description-text {
+                            background: $background-color-2;
+                            box-shadow: $shadow-1;
+                            border-radius: 15px;
+                            padding: 40px;
+                            // Upper Content On The Item
+                            .upper-content {
+                                margin-bottom: 20px;
+                                // Heading Of Content
+                                .heading {
+                                    h5 {
+                                        color: #c4cfde;
+                                        text-transform: capitalize;
+                                    }
+                                    span {
+                                        color: #7c838e;
+                                        display: inline-block;
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                                // Five Star Badge
+                                .five-stars {
+                                    background: $background-color-1;
+                                    box-shadow: $shadow-1;
+                                    text-align: center;
+                                    padding: 10px;
+                                    width: fit-content;
+                                    span {
+                                        color: #ffab1a;
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                            // Body Content
+                            .paragraph-content {
+                                @extend %top_line;
+                                .text {
+                                    p {
+                                        padding: 25px 0;
+                                        color: $color-body;
+                                        line-height: 2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //======= Carsouel Arrows
+            .arrows {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 100px;
+                button {
+                    span {
+                        background: $background-color-1;
+                        box-shadow: $shadow-1;
+                        padding: 15px 25px;
+                        font-size: 10px;
+                        @include transition;
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+//======== End Clients

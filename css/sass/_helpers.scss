@@ -1,0 +1,57 @@
+// // Helpers 
+// %overlay {
+//     content: "";
+//     position: absolute;
+//     top: $top;
+//     left: $left;
+//     width: $width;
+//     height: $height;
+// }
+
+// Top Sections Line 
+%top_line {
+    border-top: 1px solid $color-tertiary;
+}
+
+// Main Section styles
+%global_section {
+    @extend %top_line;
+    padding: $main-padding;
+}
+
+// Panel Tabs Buttons
+%panel-tabs {
+    background: $background-color-1;
+    box-shadow: $shadow-1;
+    margin-bottom: 50px;
+    // Unorder List Contains Buttons
+    ul {
+        // List Item
+        li {
+            text-align: center;
+            border-radius: 7px;
+            // width: calc(100% / 4);
+            @include transition;
+            // Links
+            a {
+                display: inline-block;
+                padding: 35px 0;
+                text-transform: capitalize;
+                color: $par-color;
+                font-weight: bold;
+                font-size: 18px;
+                width: 100%;
+                // Active Link 
+                &.active {
+                    color: $main-color;
+                    background: $background-color-1;
+                    box-shadow: $shadow-1;
+                }
+                // Buttons On Hover
+                &:hover {
+                    @extend .active;
+                }
+            }
+        }
+    }
+}
