@@ -6,7 +6,7 @@ developer Personal portfolio bootstrap template for developer.
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Preview Link](#preview)
+* [Preview Link](#Preview-Link)
 
 ```
 ```
