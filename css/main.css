@@ -426,8 +426,8 @@ header .header-content .content-parent h1 {
   margin: 25px 0;
 }
 
-header .header-content .content-parent h1 span {
-  color: #ff014f;
+header .header-content .content-parent h1 .catchs {
+  color: #ffffff;
 }
 
 header .header-content .content-parent p, header .header-content .content-parent span {
@@ -1652,6 +1652,12 @@ footer .copyright {
 
 footer .copyright a {
   color: #ff014f;
+}
+
+@media screen and (max-width: 376px) {
+  header .header-content .content-parent .header-image .image {
+    padding-top: 45px;
+  }
 }
 
 @media screen and (max-width: 768px) {

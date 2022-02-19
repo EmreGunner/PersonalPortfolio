@@ -1,4 +1,18 @@
 
+//============ Start Header Section
+header {
+    .header-content {
+        .content-parent {
+            .header-image {
+                @media screen and (max-width: 376px) {
+                    .image {
+                        padding-top: 45px;
+                    }            
+                }
+           }
+       }
+    }
+}
 //============ Start POrtfolio Section
 .portfolio {
     @media screen and (max-width: 768px) {

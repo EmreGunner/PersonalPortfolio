@@ -14,8 +14,8 @@ header {
             h1 {
                 color: $color-gray;
                 margin: 25px 0;
-                span {
-                    color: $main-color;
+                .catchs {
+                    color: $white;
                 }
             }
             // Other Info Text

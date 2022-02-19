@@ -42,7 +42,6 @@
             };
     };
 
-
 //=========== Side Navbar Custmiztion
     function customization_menu() {
         document.body.onclick = () => {
@@ -56,7 +55,6 @@
             }
         };
     };
-
 
 //========== Shuffle Content 
     function shuffling() {
@@ -130,6 +128,20 @@
       
     };
 
+//======== Make Type Write Effect,
+(function writeEffectApp() {
+
+    let text = `i'm jone lee a web developer.`;
+    let catchs = document.querySelector('.header-content .content-info h1 .catchs');
+    let i  = 0;
+        let inerval = setInterval(()=> {
+            catchs.textContent += text[i];
+            i++;
+            if(i >= text.length) {
+                clearInterval(inerval);
+            }
+        }, 100);
+}());
         
 
 
