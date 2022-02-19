@@ -1654,9 +1654,9 @@ footer .copyright a {
   color: #ff014f;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 576px) {
   header .header-content .content-parent .header-image .image {
-    padding-top: 45px;
+    padding-top: 200px;
   }
 }
 

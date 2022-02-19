@@ -22,7 +22,7 @@ The purpose from rebuilding this template is to for practicing. & to be ready fo
 ## Technologies
 Project is created with:
 * Html       : Version_5.
-* CSS        : Version_3.
+* SAAS.
 * JavaScript : Es6.
 * Bootstrap  : Version_5.
 * Fontawsome : Version_5.

@@ -4,9 +4,9 @@ header {
     .header-content {
         .content-parent {
             .header-image {
-                @media screen and (max-width: 376px) {
+                @media screen and (max-width: 576px) {
                     .image {
-                        padding-top: 45px;
+                        padding-top: 200px;
                     }            
                 }
            }
