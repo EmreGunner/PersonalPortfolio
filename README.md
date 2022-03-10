@@ -32,7 +32,7 @@ Project is created with:
 
 ## Preview Link:
 
-Use the link to preview [developer personal portfolio](https://github.com/ali-sabry/developer_personal_portfolio).
+Use the link to preview [developer personal portfolio](https://ali-sabry.github.io/inbio-developer/).
 
 ```bash
 Note: This Template Is For Presentation Only.
