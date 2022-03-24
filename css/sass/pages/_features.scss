@@ -15,7 +15,7 @@
     }
     .boxes {
         .box {
-            min-height: 410px;
+            height: 370px;
             cursor: pointer;
             color: $color-body;
             margin-bottom: 40px;
@@ -40,6 +40,8 @@
                     width: 80%;
                 }
                 .box-send-btn {
+                    display: block;
+                    margin-top: 20px;
                     color: $main-color;
                     font-size: 28px;
                     opacity: 0;

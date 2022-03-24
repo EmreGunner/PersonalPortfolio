@@ -12,8 +12,11 @@
     // Pricing  Section Panel Buttons
     let pricing_tabs = document.querySelectorAll(".pricing-panel ul li a");
     let pricing_cont = document.querySelectorAll(".pricing .content");
+    
+//========= Hide Body Overflow .
+    document.body.style.overflow = 'hidden';
 
-//===== All Effects On Scroll Window Function
+//===== All Effects On Scroll Window Function .
     function scrolling_site() {
         window.onscroll = () => {
             // Set Navbar Background Effect On Scroll
@@ -34,7 +37,7 @@
         };  
     };
 
-//===== Go To Top On Click Button
+//===== Go To Top On Click Button .
     function to_top() {
             let to_top = document.querySelector(".to-top-btn");
             to_top.onclick = () => {
@@ -42,7 +45,7 @@
             };
     };
 
-//=========== Side Navbar Custmiztion
+//=========== Side Navbar Custmiztion .
     function customization_menu() {
         document.body.onclick = () => {
             if (side_nav.style.visibility == "visible") {
@@ -56,7 +59,7 @@
         };
     };
 
-//========== Shuffle Content 
+//========== Shuffle Content .
     function shuffling() {
         //===== Function Active Button On Clicked
             function shuffle(tabs, content) {
@@ -93,9 +96,9 @@
             shuffle(resume_tabs, resume_cont);
             shuffle(clients_tabs, clients_cont);
             shuffle(pricing_tabs, pricing_cont);
-    }  
+    }; 
     
-//============ Body Custmization
+//============ Body Custmization .
     function customization_body() {
         // Check Upper Navbar Inner Height
         if (Lg_navbar.clientHeight > 10) {
@@ -105,35 +108,14 @@
         } else {
             document.body.style.paddingTop = 0;
         }
-    }   
-
-//======== Set Padding Top For Body & Padding Right For Top_Bar_Navbar
-    window.onload = ()=> {
-        top_bar_navbar.style.paddingRight = 0;
-
-        // Run Custimazition Body Function
-        customization_body();
-
-        // Run Scrolling Function
-        scrolling_site();
-
-        // Run Go To Top Function
-        to_top();
-
-        // Run Custimazition Side Menu Function
-        customization_menu();
-
-        // Run Shuffle Content
-        shuffling();
-      
     };
 
-//======== Make Type Write Effect,
-(function writeEffectApp() {
+//======== Make Type Write Effect .
+    function writeEffectApp() {
 
-    let text = `i'm jone lee a web developer.`;
-    let catchs = document.querySelector('.header-content .content-info h1 .catchs');
-    let i  = 0;
+        let text = `i'm jone lee a web developer.`;
+        let catchs = document.querySelector('.header-content .content-info h1 .catchs');
+        let i  = 0;
         let inerval = setInterval(()=> {
             catchs.textContent += text[i];
             i++;
@@ -141,7 +123,43 @@
                 clearInterval(inerval);
             }
         }, 100);
-}());
+    };
+
+//======== Run All Function When Site Is Loading .
+    window.onload = ()=> {
+        // Top Navbar Padding Setting
+        top_bar_navbar.style.paddingRight = 0;
+        setTimeout(()=>{
+            //========= Hide Loading Page
+            document.querySelector('.loading-page').style.display = 'none';
+
+            // Run Custimazition Body Function
+            customization_body();
+
+            // Run Scrolling Function
+            scrolling_site();
+
+            // Run Go To Top Function
+            to_top();
+
+            // Run Custimazition Side Menu Function
+            customization_menu();
+
+            // Run Shuffle Content
+            shuffling();
+                    
+            // Run Write Effect Function
+            writeEffectApp();
+
+            // Display Body ScrollBar
+            document.body.style.overflow = 'auto';
+
+        }, 2000);
+    };
+
+
+
+
         
 
 

@@ -182,7 +182,7 @@ ul {
 }
 
 
- //======= Hide Boxes Contain Content Without First Box
+//======= Hide Boxes Contain Content Without First Box
 .resume, .pricing, .clients {
     .content {
         display: none;
@@ -190,4 +190,23 @@ ul {
     .content.active {
         display: block;
     }
+}
+
+//======== Loading Page
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: $background-color-1;
+    z-index: 100000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-page i {
+    // background-color: $main-color;
+    color: $main-color;
+    font-size: 70px;
 }

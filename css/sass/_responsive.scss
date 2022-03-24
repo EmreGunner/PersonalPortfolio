@@ -6,11 +6,24 @@ header {
             .header-image {
                 @media screen and (max-width: 576px) {
                     .image {
-                        padding-top: 200px;
+                        padding-top: 250px;
                     }            
                 }
            }
        }
+    }
+}
+//============ Start FeaturesSection
+.features {
+    @media screen and (max-width: 768px) { 
+        .boxes {
+            .box {
+                height: 330px;
+                .inner p {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 //============ Start POrtfolio Section

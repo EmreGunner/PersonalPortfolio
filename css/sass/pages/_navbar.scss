@@ -71,6 +71,7 @@ header {
       padding: 0;
         // Links
         .navbar-nav {
+            align-items: center;
             &:hover {
                 opacity: .8;
             }

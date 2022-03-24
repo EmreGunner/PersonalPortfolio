@@ -272,6 +272,30 @@ ul {
   display: block;
 }
 
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(145deg, #1e2024, #23272b);
+  z-index: 100000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading-page i {
+  color: #ff014f;
+  font-size: 70px;
+}
+
 header .toggle-side-nav:focus {
   outline: none;
   border: none;
@@ -341,6 +365,12 @@ header .mobile-nav ul.nav-pills li a:hover {
 
 header .navbar-expand-sm {
   padding: 0;
+}
+
+header .navbar-expand-sm .navbar-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .navbar-expand-sm .navbar-nav:hover {
@@ -495,7 +525,7 @@ header .header-content .content-parent .header-image .image img {
 }
 
 .features .boxes .box {
-  min-height: 410px;
+  height: 370px;
   cursor: pointer;
   color: #878e99;
   margin-bottom: 40px;
@@ -530,6 +560,8 @@ header .header-content .content-parent .header-image .image img {
 }
 
 .features .boxes .box .inner .box-send-btn {
+  display: block;
+  margin-top: 20px;
   color: #ff014f;
   font-size: 28px;
   opacity: 0;
@@ -1656,7 +1688,16 @@ footer .copyright a {
 
 @media screen and (max-width: 576px) {
   header .header-content .content-parent .header-image .image {
-    padding-top: 200px;
+    padding-top: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features .boxes .box {
+    height: 330px;
+  }
+  .features .boxes .box .inner p {
+    width: 100%;
   }
 }
 
