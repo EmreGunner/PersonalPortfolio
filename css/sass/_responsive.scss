@@ -9,12 +9,27 @@ header {
                         padding-top: 250px;
                     }            
                 }
+                @media screen and (max-width: 376px) {
+                    .image {
+                        padding-top: 280px;
+                    }            
+                }
            }
        }
     }
 }
 //============ Start FeaturesSection
 .features {
+    @media screen and (max-width: 376px) {
+        .boxes {
+            .box {
+                height: 280px !important;
+                .inner {
+                    padding: 15px;
+                }
+            }
+        }
+    }
     @media screen and (max-width: 768px) { 
         .boxes {
             .box {
@@ -53,8 +68,16 @@ header {
                 .box {
                     // Set Postition Of Dash & Bullets Between Box And Left Column
                     .inner {
+                        @media screen and (max-width: 376px) {
+                            padding: 10px;
+                            //  Bullets
+                            &::after {
+                                top: 7.5% !important;
+                                right: 107% !important;
+                            }
+                        }
                         // Inner Box Seoudo Element On Small Screen
-                        @media (max-width: 768px) {
+                        @media screen and (max-width: 768px) {
                             // Dash
                             &::before {
                              top: 9.5%;   
@@ -74,7 +97,7 @@ header {
                         // Inner Box Seoudo Element On Extra large Screen
                         @media screen and (min-width: 1025px)  {
                             //  Bullets
-                             &::after {
+                            &::after {
                                 right: 104.6%;
                             }
                         }

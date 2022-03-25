@@ -1692,6 +1692,21 @@ footer .copyright a {
   }
 }
 
+@media screen and (max-width: 376px) {
+  header .header-content .content-parent .header-image .image {
+    padding-top: 280px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .features .boxes .box {
+    height: 280px !important;
+  }
+  .features .boxes .box .inner {
+    padding: 15px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .features .boxes .box {
     height: 330px;
@@ -1707,7 +1722,17 @@ footer .copyright a {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 376px) {
+  .resume .education-content .left-boxes .boxes .box .inner, .resume .education-content .right-boxes .boxes .box .inner {
+    padding: 10px;
+  }
+  .resume .education-content .left-boxes .boxes .box .inner::after, .resume .education-content .right-boxes .boxes .box .inner::after {
+    top: 7.5% !important;
+    right: 107% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .resume .education-content .left-boxes .boxes .box .inner::before, .resume .education-content .right-boxes .boxes .box .inner::before {
     top: 9.5%;
   }
