@@ -21,7 +21,7 @@ The purpose from rebuilding this template is to for practicing. & to be ready fo
 <hr />
 
 ## Preview Link
-Click the link to preview [developer personal portfolio](https://ali-sabry.github.io/inbio-developer/).
+Click the link to preview [developer personal portfolio](https://ali-sabry.github.io/inbio-portfolio/).
 
 <hr />
 
