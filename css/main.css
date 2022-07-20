@@ -525,7 +525,7 @@ header .header-content .content-parent .header-image .image img {
 }
 
 .features .boxes .box {
-  height: 370px;
+  height: fit-content;
   cursor: pointer;
   color: #878e99;
   margin-bottom: 40px;
