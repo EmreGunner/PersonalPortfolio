@@ -7,7 +7,12 @@
 .features, .portfolio, .resume, .testimonials-sec, .clients, .pricing, .blog, .contact, footer {
   padding: 50px 0;
 }
-
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 .resume .panel-dad, .clients .left-side-buttons, .pricing .pricing-panel {
   background: linear-gradient(145deg, #1e2024, #23272b);
   -webkit-box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
