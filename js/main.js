@@ -111,19 +111,46 @@
     };
 
 //======== Make Type Write Effect .
-    function writeEffectApp() {
+function writeEffectApp() {
+    const baseText = `i'm Emre Guner `;
+    const phrases = ["a developer", "an entrepreneur", "an AI Implementer"];
+    let catchs = document.querySelector('.header-content .content-info h1 .catchs');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100; // Time in ms for adding a character
+    const deletingSpeed = 50; // Time in ms for deleting a character
+    const endOfPhrasePause = 1500; // Pause time at the end of a phrase before deleting
 
-        let text = `i'm jone lee a web developer.`;
-        let catchs = document.querySelector('.header-content .content-info h1 .catchs');
-        let i  = 0;
-        let inerval = setInterval(()=> {
-            catchs.textContent += text[i];
-            i++;
-            if(i >= text.length) {
-                clearInterval(inerval);
+    function typeWriter() {
+        if (isDeleting) {
+            if (charIndex > 0) {
+                charIndex--;
+                updateText();
+                setTimeout(typeWriter, deletingSpeed);
+            } else {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typeWriter, endOfPhrasePause); // Wait before start typing next phrase
             }
-        }, 100);
-    };
+        } else {
+            if (charIndex < phrases[phraseIndex].length) {
+                charIndex++;
+                updateText();
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                isDeleting = true;
+                setTimeout(typeWriter, endOfPhrasePause); // Wait a bit longer at end of phrase before deleting
+            }
+        }
+    }
+
+    function updateText() {
+        catchs.textContent = baseText + phrases[phraseIndex].substring(0, charIndex);
+    }
+
+    typeWriter();
+};
 
 //======== Run All Function When Site Is Loading .
     window.onload = ()=> {
