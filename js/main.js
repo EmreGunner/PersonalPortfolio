@@ -38,12 +38,7 @@
     };
 
 //===== Go To Top On Click Button .
-    function to_top() {
-            let to_top = document.querySelector(".to-top-btn");
-            to_top.onclick = () => {
-                window.window.scrollTo(0, 0);
-            };
-    };
+
 
 //=========== Side Navbar Custmiztion .
     function customization_menu() {
