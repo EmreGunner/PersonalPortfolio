@@ -39,6 +39,24 @@
 
 //===== Go To Top On Click Button .
 // Define the function to scroll to the top of the page
+// Define the function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Add the event listener after the DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the to-top button
+    let toTopBtn = document.querySelector(".to-top-btn");
+
+    // Ensure the button exists
+    if (toTopBtn) {
+        // Add an event listener to this button
+        toTopBtn.addEventListener('click', function() {
+            scrollToTop();
+        });
+    }
+});
 
 
 // Add the event listener after the DOM content is fully loaded
