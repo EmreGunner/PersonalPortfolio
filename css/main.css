@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Add perspective to the parent container */
+.header-content {
+  perspective: 1000px;
+  perspective-origin: center right;
+}
+
+/* Set the initial state of your image */
+.header-image .image img {
+  transition: transform 0.5s, filter 0.5s;
+  transform-origin: center right;
+  will-change: transform, filter;
+  filter: brightness(100%);
+}
+
+/* Define the hover state with a 3D rotation and a slight zoom */
+.header-image .image:hover img {
+  transform: rotateY(-10deg) scale(1.05);
+  filter: brightness(120%);
+}
+
 .features, .portfolio, .resume, .testimonials-sec, .clients, .pricing, .blog, .contact, footer, .resume .education-content .left-boxes .boxes .box .inner p, .resume .education-content .right-boxes .boxes .box .inner p, .resume .experince-content .left-boxes .boxes .box .inner p, .resume .experince-content .right-boxes .boxes .box .inner p, .resume .interview-content .left-boxes .boxes .box .inner p, .resume .interview-content .right-boxes .boxes .box .inner p, .testimonials-sec .testimonials .carousel-inner .carousel-item .testimonials-right-content .description-text .paragraph-content, .clients .right-side-images .card-content .name {
   border-top: 1px solid #0d1013;
 }
@@ -1800,4 +1820,5 @@ footer .copyright a {
     height: 300px;
   }
 }
+
 /*# sourceMappingURL=main.css.map */

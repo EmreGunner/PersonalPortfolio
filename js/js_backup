@@ -14,14 +14,13 @@
     let pricing_cont = document.querySelectorAll(".pricing .content");
     
 //========= Hide Body Overflow .
-if (document.body) {
     document.body.style.overflow = 'hidden';
-}
+
 //===== All Effects On Scroll Window Function .
     function scrolling_site() {
         window.onscroll = () => {
             // Set Navbar Background Effect On Scroll
-            if (window.scrollY > 200) {
+            if (window.pageYOffset > 200) {
                 document.querySelector(".scrolling-navbar").classList.add("scrolling-nav");
             } else {
                 document
@@ -30,7 +29,7 @@ if (document.body) {
             }
         
             // Show Button Go Top On Scroll
-            if (window.scrollY > 800) {
+            if (window.pageYOffset > 800) {
                 document.querySelector(".to-top-btn").style.opacity = 1;
             } else {
                 document.querySelector(".to-top-btn").style.opacity = 0;
@@ -39,41 +38,54 @@ if (document.body) {
     };
 
 //===== Go To Top On Click Button .
-function to_top() {
-    let to_top = document.querySelector(".to-top-btn");
-    if (to_top) {
-        to_top.addEventListener('click', function(event) {
-            console.log(".to-top-btn clicked");
-            event.stopPropagation();
-            window.scrollTo(0, 0);
-        });
-    }
+// Define the function to scroll to the top of the page
+// Define the function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Add the event listener after the DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the to-top button
+    let toTopBtn = document.querySelector(".to-top-btn");
+
+    // Ensure the button exists
+    if (toTopBtn) {
+        // Add an event listener to this button
+        toTopBtn.addEventListener('click', function() {
+            scrollToTop();
+        });
+    }
+});
+
+
+// Add the event listener after the DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the to-top button
+    let toTopBtn = document.querySelector(".to-top-btn");
+
+    // Ensure the button exists
+    if (toTopBtn) {
+        // Add an event listener to this button
+        toTopBtn.addEventListener('click', function() {
+            scrollToTop();
+        });
+    }
+});
+
 //=========== Side Navbar Custmiztion .
-function customization_menu() {
-    document.body.addEventListener('click', (event) => {
-          // Check if the click is on a project box or inside a project box
-        if (event.target.closest('.box')) {
-            // Click is inside a project box, do nothing
-            console.log("Box Clicked -Customization Menu")
-            return;
-        }
-        // Check if the click event is inside 'side_nav' or is 'side_nav' itself
-        if (side_nav.contains(event.target) || event.target === side_nav) {
-            // The click is inside 'side_nav', do nothing
-        } else {
-            // The click is outside 'side_nav'
+    function customization_menu() {
+        document.body.onclick = () => {
             if (side_nav.style.visibility == "visible") {
                 document.body.style.overflow = "auto";
                 document.body.style.paddingRight = 0;
                 top_bar_navbar.style.paddingRight = 0;
                 side_nav.style.maxWidth = `${90}%`;
+            } else {
+                return false;
             }
-        }
-    });
-}
-
+        };
+    };
 
 //========== Shuffle Content .
     function shuffling() {
@@ -117,9 +129,9 @@ function customization_menu() {
 //============ Body Custmization .
     function customization_body() {
         // Check Upper Navbar Inner Height
-        if (Lg_navbar && Lg_navbar.clientHeight > 10) {
+        if (Lg_navbar.clientHeight > 10) {
             document.body.style.paddingTop = `${Lg_navbar.clientHeight}px`;
-        } else if (top_bar_navbar && top_bar_navbar.clientHeight > 10) {
+        } else if (top_bar_navbar.clientHeight > 10) {
             document.body.style.paddingTop = `${top_bar_navbar.clientHeight}px`;
         } else {
             document.body.style.paddingTop = 0;
@@ -168,43 +180,10 @@ function writeEffectApp() {
     typeWriter();
 };
 
-// Function to add click event listeners to project boxes
-function attachClickEventsToProjectBoxes() {
-    
-    const projectBoxes = document.querySelectorAll('.projects-boxes .box');
-    projectBoxes.forEach(box => {
-        box.addEventListener('click', function(event) {
-            event.stopPropagation(); // Stop event from bubbling up to the body
-            // Handle the click event on the project box
-            // For example, open a modal or perform another action
-            console.log('Project box clicked:', this);
-            // Extracting information from the clicked box
-            const imageUrl = box.querySelector('.image img').src;
-            const projectTitle = box.querySelector('.box-head span').textContent;
-            const projectType = box.querySelector('.project-type span:first-child').textContent;
-
-            // Selecting the modal elements to update
-            const modalImage = document.querySelector('#portfolio-pop .portfolio-popup-thumbnail .image img');
-            const modalTitle = document.querySelector('#portfolio-pop .text-info h3');
-
-            // Updating the modal content
-            modalImage.src = imageUrl;
-            modalImage.alt = projectTitle;
-            modalTitle.innerHTML = `<span>Featured - ${projectType}</span> ${projectTitle}`;
-
-            // Assuming you're using Bootstrap's modal component
-            // If not, you'll need to adjust how you show the modal
-            const portfolioModal = new bootstrap.Modal(document.getElementById('portfolio-pop'));
-            portfolioModal.show();
-        });
-    });
-}
 //======== Run All Function When Site Is Loading .
     window.onload = ()=> {
         // Top Navbar Padding Setting
-        if (top_bar_navbar) {
-            top_bar_navbar.style.paddingRight = 0;
-        }
+        top_bar_navbar.style.paddingRight = 0;
         setTimeout(()=>{
             //========= Hide Loading Page
             document.querySelector('.loading-page').style.display = 'none';
@@ -220,8 +199,7 @@ function attachClickEventsToProjectBoxes() {
 
             // Run Custimazition Side Menu Function
             customization_menu();
-            // Call the function to attach events to project boxes
-            attachClickEventsToProjectBoxes();
+
             // Run Shuffle Content
             shuffling();
                     
@@ -230,31 +208,11 @@ function attachClickEventsToProjectBoxes() {
 
             // Display Body ScrollBar
             document.body.style.overflow = 'auto';
-                // Handle modal close functionality
-            handleModalClose();
 
         }, 2000);
     };
 
-// Function to properly handle closing the modal
-function handleModalClose() {
-    const closeButton = document.querySelector('#portfolio-pop .btn-close');
-    const modalElement = document.getElementById('portfolio-pop');
-    const portfolioModal = bootstrap.Modal.getInstance(modalElement);
 
-    closeButton.addEventListener('click', () => {
-        portfolioModal.hide();
-    });
-
-    modalElement.addEventListener('hidden.bs.modal', () => {
-        // Remove modal backdrops
-        const backdrops = document.querySelectorAll('.modal-backdrop');
-        backdrops.forEach(backdrop => backdrop.remove());
-
-        // Reset body overflow
-        document.body.style.overflow = '';
-    });
-}
 
 
         
