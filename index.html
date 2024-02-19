@@ -1791,7 +1791,10 @@
               window.voiceflow.chat.load({
                 verify: { projectID: '65ce856ee3074928b3ebcdc4' },
                 url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
+                versionID: 'production',
+                assistant: {
+                    stylesheet: 'css/chatbotstyle.css' // URL of your custom stylesheet
+                  }
               });
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
