@@ -168,6 +168,7 @@ function writeEffectApp() {
     typeWriter();
 };
 
+
 // Function to add click event listeners to project boxes
 function attachClickEventsToProjectBoxes() {
     
@@ -182,16 +183,21 @@ function attachClickEventsToProjectBoxes() {
             const imageUrl = box.querySelector('.image img').src;
             const projectTitle = box.querySelector('.box-head span').textContent;
             const projectType = box.querySelector('.project-type span:first-child').textContent;
-
+            // Get project URL from the data attribute            
+            const projectUrl = this.getAttribute('data-project-url');
+            console.log("Project URL")
+            console.log(projectUrl)
             // Selecting the modal elements to update
             const modalImage = document.querySelector('#portfolio-pop .portfolio-popup-thumbnail .image img');
             const modalTitle = document.querySelector('#portfolio-pop .text-info h3');
-
+            const modalViewProjectButton = document.querySelector('#portfolio-pop .button-group a:nth-child(2)'); // Select the "View Project" button
+            
             // Updating the modal content
             modalImage.src = imageUrl;
             modalImage.alt = projectTitle;
             modalTitle.innerHTML = `<span>Featured - ${projectType}</span> ${projectTitle}`;
-
+            modalViewProjectButton.href = projectUrl; // Update the "View Project" button link
+            
             // Assuming you're using Bootstrap's modal component
             // If not, you'll need to adjust how you show the modal
             const portfolioModal = new bootstrap.Modal(document.getElementById('portfolio-pop'));
