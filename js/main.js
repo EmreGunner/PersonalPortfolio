@@ -169,41 +169,50 @@ function writeEffectApp() {
 };
 
 
-// Function to add click event listeners to project boxes
+// Main function to attach click event listeners to project boxes
 function attachClickEventsToProjectBoxes() {
-    
     const projectBoxes = document.querySelectorAll('.projects-boxes .box');
     projectBoxes.forEach(box => {
-        box.addEventListener('click', function(event) {
-            event.stopPropagation(); // Stop event from bubbling up to the body
-            // Handle the click event on the project box
-            // For example, open a modal or perform another action
-            console.log('Project box clicked:', this);
-            // Extracting information from the clicked box
-            const imageUrl = box.querySelector('.image img').src;
-            const projectTitle = box.querySelector('.box-head span').textContent;
-            const projectType = box.querySelector('.project-type span:first-child').textContent;
-            // Get project URL from the data attribute            
-            const projectUrl = this.getAttribute('data-project-url');
-            console.log("Project URL")
-            console.log(projectUrl)
-            // Selecting the modal elements to update
-            const modalImage = document.querySelector('#portfolio-pop .portfolio-popup-thumbnail .image img');
-            const modalTitle = document.querySelector('#portfolio-pop .text-info h3');
-            const modalViewProjectButton = document.querySelector('#portfolio-pop .button-group a:nth-child(2)'); // Select the "View Project" button
-            
-            // Updating the modal content
-            modalImage.src = imageUrl;
-            modalImage.alt = projectTitle;
-            modalTitle.innerHTML = `<span>Featured - ${projectType}</span> ${projectTitle}`;
-            modalViewProjectButton.href = projectUrl; // Update the "View Project" button link
-            
-            // Assuming you're using Bootstrap's modal component
-            // If not, you'll need to adjust how you show the modal
-            const portfolioModal = new bootstrap.Modal(document.getElementById('portfolio-pop'));
-            portfolioModal.show();
-        });
+        box.addEventListener('click', handleProjectBoxClick);
     });
+}
+
+// Handles the click event on a project box
+function handleProjectBoxClick(event) {
+    event.stopPropagation(); // Prevents event from bubbling up to the body
+    console.log('Project box clicked:', this);
+
+    const projectInfo = extractProjectInfo(this);
+    updateModalContent(projectInfo);
+    showModal();
+}
+
+// Extracts project information from the clicked box
+function extractProjectInfo(box) {
+    return {
+        imageUrl: box.querySelector('.image img').src,
+        projectTitle: box.querySelector('.box-head span').textContent,
+        projectType: box.querySelector('.project-type span:first-child').textContent,
+        projectUrl: box.getAttribute('data-project-url')
+    };
+}
+
+// Updates the modal with extracted project information
+function updateModalContent({ imageUrl, projectTitle, projectType, projectUrl }) {
+    const modalImage = document.querySelector('#portfolio-pop .portfolio-popup-thumbnail .image img');
+    const modalTitle = document.querySelector('#portfolio-pop .text-info h3');
+    const modalViewProjectButton = document.querySelector('#portfolio-pop .button-group a:nth-child(2)');
+
+    modalImage.src = imageUrl;
+    modalImage.alt = projectTitle;
+    modalTitle.innerHTML = `<span>Featured - ${projectType}</span> ${projectTitle}`;
+    modalViewProjectButton.href = projectUrl;
+}
+
+// Displays the modal
+function showModal() {
+    const portfolioModal = new bootstrap.Modal(document.getElementById('portfolio-pop'));
+    portfolioModal.show();
 }
 //======== Run All Function When Site Is Loading .
     window.onload = ()=> {
