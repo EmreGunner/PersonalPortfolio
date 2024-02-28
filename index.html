@@ -1791,22 +1791,19 @@
     <script src="js/bootstrap.min.js"></script>    
     <!-- Main Js File -->
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '65ce856ee3074928b3ebcdc4' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production',
-                assistant: {
-                    stylesheet: 'https://raw.githubusercontent.com/EmreGunner/PersonalPortfolio/main/css/chatbotstyle.css' // URL of your custom stylesheet
-                  }
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '65db9870b86fd7c8911fbe0f' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 
 </html>
