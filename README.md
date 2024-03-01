@@ -2,7 +2,6 @@
 developer Personal portfolio bootstrap template for developer.
 
 <hr />
-<img src="images/preview.png" alt="preview" />
 <hr />
 
 ## Table of contents
@@ -20,8 +19,8 @@ The purpose from rebuilding this template is to for practicing. & to be ready fo
 
 <hr />
 
-## Preview Link
-Click the link to preview [developer personal portfolio](https://ali-sabry.github.io/inbio-portfolio/).
+
+
 
 <hr />
 
