@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Search Query Generator for Lead Generation</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="queryGenerator">
+        <div class="form-group">
+            <label for="keyword">Enter keyword (e.g., founders, influencers):</label>
+            <input type="text" id="keyword" placeholder="Keyword">
+        </div>
+        <div class="form-group">
+            <label for="contactType">Enter contact type (e.g., gmail):</label>
+            <input type="text" id="contactType" placeholder="Contact Type">
+        </div>
+        
+        <div class="form-group">
+            <label for="siteSelect">Choose a site:</label>
+            <select id="siteSelect" onchange="toggleSiteInput()">
+                <option value="instagram.com">Instagram</option>
+                <option value="linkedin.com">LinkedIn</option>
+                <option value="twitter.com">Twitter</option>
+                <option value="other">Other (e.g., yoursite.com)</option>
+            </select>
+            <input type="text" id="site" placeholder="Enter site" style="display:none;">
+        </div>
+
+        <div class="form-group">
+            <label for="excludeTerms">Exclude terms (e.g., free, trial):</label>
+            <input type="text" id="excludeTerms" placeholder="Exclude Terms">
+        </div>
+        
+        <div class="form-group">
+            <label for="excludeSites">Exclude site links (e.g., https://www.instagram.com/p/):</label>
+            <input type="text" id="excludeSites" placeholder="Exclude Sites">
+        </div>
+        
+        <div class="form-group">
+            <label for="location">Enter location (e.g., New York):</label>
+            <input type="text" id="location" placeholder="Location">
+        </div>
+         
+        <div class="form-group" style="text-align: center;">
+            <button onclick="generateQuery()">Generate Query</button>
+        </div>
+        <!-- After the 'Generate Query' button -->
+         <div id="result" style="display:none;"></div> 
+        
+        <!-- The div for the search result, initially hidden -->
+        <div id="searchResult" style="display:none;"> 
+            <div class="query-title">Generated Query:</div>
+            <!-- Placeholder for the generated query URL -->
+            <a href="#" id="searchLink" target="_blank" class="search-link">Search on Google</a>
+            <button onclick="copyToClipboard()" class="copy-btn">Copy</button>
+            <button onclick="cleanResults()" class="clean-btn">Clean</button>
+            </div>  
+        </div>
+    
+
+    <script src="form.js"></script>
+</body>
+</html>

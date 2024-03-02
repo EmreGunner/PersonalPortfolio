@@ -1,0 +1,142 @@
+.clean-btn {
+    /* Add styles for the "Clean" button */
+    background-color: #f44336; /* Red color for the delete action */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* Spacing from the "Copy" button */
+}
+.clean-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+/* Additional styles for the search result elements */
+.query-title, .query-url, .search-link, .copy-btn {
+    margin-bottom: 10px; /* Space between elements */
+}
+/* Ensure word wrapping for the URL */
+.query-url {
+    word-wrap: break-word;
+    overflow-x: auto; /* Allows for horizontal scrolling if necessary */
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#queryGenerator {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+/* Add this new class for the title of the generated query */
+.query-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input[type=text],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+}
+
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #4cae4c;
+}
+
+/* Update the #result styles to give it a standout frame and background */
+#result {
+    background: #e9f7df;
+    border-left: 5px solid #4cae4c;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    word-wrap: break-word;
+    margin-bottom: 10px; /* Added space below this element */
+}
+
+/* Style for the clickable search link */
+/* Style adjustments for the clickable link to ensure consistency */
+.search-link {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
+}
+.search-link:hover {
+    background-color: #449d44; /* Slightly darker green on hover */
+}
+
+/* Style for the copy to clipboard button */
+/* Style adjustments for the copy button with the clipboard icon */
+.copy-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px; /* Match the rounded corners of the search link */
+    font-size: 14px;
+}
+
+/* Add icon font styles if you are using a service like FontAwesome */
+.copy-btn::before {
+    content: '\1F4CB'; /* Clipboard emoji as icon */
+    margin-right: 5px;
+}
+/* Style for the search result container */
+#searchResult {
+    /* Other styles remain the same */
+    border-radius: 10px; /* Round frame */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Spacing inside the frame */
+    margin-top: 10px; /* Space from the above elements */
+    background-color: #f9f9f9; /* Light background color */
+    display: none;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align the flex items */
+    justify-content: center; /* Center content vertically in case of extra space */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for the frame */
+    background: #e9f7df; /* Background color */
+}
