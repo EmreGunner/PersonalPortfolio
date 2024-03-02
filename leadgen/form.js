@@ -5,14 +5,20 @@ function generateQuery() {
     var location = document.getElementById('location').value;
     var contactType = document.getElementById('contactType').value;
     var excludeTerms = document.getElementById('excludeTerms').value.split(',').map(term => '-' + term.trim()).join(' ');
-    var excludeSites = document.getElementById('excludeSites').value.split(',').map(site => '-site:' + site.trim()).join(' ');
+        // Split the input on commas, prepend with '-inurl:' and join with spaces
+        var excludeSites = document.getElementById('excludeSites').value.split(',')
+        .map(path => '-inurl:' + path.trim())
+        .join(' ');
+    var relatedSite = document.getElementById('relatedSite').value;
+    var relatedQueryPart = relatedSite ? 'related:' + relatedSite : '';
     
     var query = 'https://www.google.com/search?q=' + encodeURIComponent(keyword) +
                 (location ? '+in+' + encodeURIComponent(location) : '') +
                 '+intext:' + encodeURIComponent(contactType) +
                 (site ? '+site:' + encodeURIComponent(site) : '') +
                 ' ' + excludeTerms + 
-                ' ' + excludeSites;
+                ' ' + excludeSites +
+                ' ' + relatedQueryPart; // Add the related query part
                 
                 var resultDiv = document.getElementById('result');
                 resultDiv.textContent = 'Generated Query URL: ' + query;

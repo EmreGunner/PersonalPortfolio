@@ -33,15 +33,20 @@
         </div>
         
         <div class="form-group">
-            <label for="excludeSites">Exclude site links (e.g., https://www.instagram.com/p/):</label>
-            <input type="text" id="excludeSites" placeholder="Exclude Sites">
+            <label for="excludeSites">Exclude URL paths (e.g., /p/, /reel/):</label>
+            <input type="text" id="excludeSites" placeholder="Exclude URL paths">
         </div>
+        
         
         <div class="form-group">
             <label for="location">Enter location (e.g., New York):</label>
             <input type="text" id="location" placeholder="Location">
         </div>
-         
+        <div class="form-group">
+            <label for="relatedSite">Find sites related to (e.g., www.example.com):</label>
+            <input type="text" id="relatedSite" placeholder="Enter related site URL">
+        </div>
+        
         <div class="form-group" style="text-align: center;">
             <button onclick="generateQuery()">Generate Query</button>
         </div>
