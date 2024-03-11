@@ -11,7 +11,8 @@ function generateQuery() {
         .join(' ');
     var relatedSite = document.getElementById('relatedSite').value;
     var relatedQueryPart = relatedSite ? 'related:' + relatedSite : '';
-    
+     // At the end of your generateQuery function, after displaying the results:
+   
     var query = 'https://www.google.com/search?q=' + encodeURIComponent(keyword) +
                 (location ? '+in+' + encodeURIComponent(location) : '') +
                 '+intext:' + encodeURIComponent(contactType) +
@@ -43,6 +44,9 @@ function generateQuery() {
                 // Show the search result section with the full URL and copy button
                 var searchResult = document.getElementById('searchResult');
                 searchResult.style.display = 'block';
+
+                sendToMake(query); // This will send the query to Make.com
+
 }
 
 function toggleSiteInput() {
@@ -77,4 +81,29 @@ function cleanResults() {
     var searchLink = document.getElementById('searchLink');
     searchLink.href = '#';
     searchLink.textContent = '';
+}
+
+function sendToMake(query) {
+    fetch('https://hook.eu2.make.com/2kls3ubq48f3sfwc355xf59wdsy8gjvv', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: query }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text(); // or response.json() if the response is JSON
+    })
+    .then(data => {
+        console.log('Success:', data);
+        alert('Query sent to Make.com successfully.');
+        console.log('Data:', query);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('An error occurred while sending the query to Make.com.');
+    });
 }
