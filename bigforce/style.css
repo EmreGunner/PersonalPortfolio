@@ -1,3 +1,9 @@
+.vfrc-launcher {
+    width: 580px; /* Adjust width as needed */
+    height: 580px; /* Adjust height as needed */
+    background-size: cover; /* Ensures that the background image (if any) covers the resized launcher */
+}
+
 /* use this file to override default styles when forking this repository */
 
 /*

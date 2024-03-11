@@ -180,9 +180,16 @@
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
                     stylesheet: "style.css" //link to your self-hosted stylesh
-                  });
+                  }).then(() => {
+    
+    window.voiceflow.chat.proactive.push({
+        type: 'text', 
+        payload: { message: ' 🔥Yapay Zeka asistanımız sorularınızı cevaplayabilir 🔥' }
+    })});
+                  
                 }
                 v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+              
             })(document, 'script');
           </script>
 </body></html>
